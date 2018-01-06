@@ -1,72 +1,139 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <title>Title</title>
-    <meta charset="utf-8">
-    <style>
-      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-      body { font-family: 'Droid Serif'; }
-      h1, h2, h3 {
-          font-family: 'Yanone Kaffeesatz';
-          font-weight: normal;
-      }
-      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
-    </style>
-  </head>
-  <body>
-  <textarea id="source">
+		<title>pATLAS</title>
 
-    class: center, middle
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
 
-    # pATLAS: the hitchhikers guide to the plasmid galaxy
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
 
-    ---
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-background-image="images/capa.gif"
+							 data-background-size="contain"
+							 data-background-color="white"
+							style="color: black">
+					<!--<textarea data-template>-->
+<h2 style="color: black"> pATLAS: the hitchhikers guide to the plasmid
+	galaxy</h2>
 
-    # Why
-      * plasmids nature
-        * chimeric...
-      * available tools and their limitations
-        * ver paper
+Jesus TF, Ribeiro-Gonçalves B, Silva DN, Valeria B, Ramirez M, Carriço JA
+					<!--</textarea>-->
+			</section>
+			<section>
+				<section data-markdown>
+					<textarea data-template>
+## Why
 
+* Plasmids nature
+	* Mosaicism (between strains, species and genera)
+	* Highly modular and chimeric
 
-    ---
+* Available tools and their limitations
+	* Assembly-based:
+		* cBar
+		* PlasmidFinder
+		* plasmidSPAdes
+		* Recycler
+<img src="images/plasmid1.png" style="position: absolute; bottom: 5%; right: 5%;
+background-color: white; width: 30%">
+						</textarea>
+				</section>
+				<section data-markdown>
+						<textarea data-template>
+## Why
 
-    # How
-      * NCBI datase
-      * mash
-      * vivagraph (force directed graph)
+* What about mapping?
+	* PlasmidProfiler
+	(based on PlasmidFinder database)
+					</textarea>
+				</section>
+			</section>
+			<section>
+				<section data-markdown>
 
-    ---
-    class: center, middle
-    # Demo
+					<textarea data-template>
+## We present pATLAS
 
-    ---
+* NCBI refseq database - **11.371** sequences
+	* Featuring **10.663** plasmid named sequences and some oddities!
+	* Featuring weird species names (e.g Enterobacteriaceae bacterium)
 
-    <div id="demoFrame">
-        <iframe src="http://www.patlas.site" height="94%" width="100%"
-                style="position: absolute; left:0%; top:0%;">
-        </iframe>
-    </div>
+* Pairwise comparisons using **MASH** to construct a network of plasmid	relationships
+	* MASH distance of 0.1 ~ ANI 0.9
+	* More than **110 Million** pairwise comparisons.
+						</textarea>
+				</section>
+				<section data-markdown>
 
-    ---
-    #Ackowledegements
-      
+					<textarea data-template>
+## We present pATLAS
+* **Abricate**
+	* PladmidFinder, ResFinder and Card databases
+	* Vfdb as well in the future...
 
-    </textarea>
-  <script src="https://remarkjs.com/downloads/remark-latest.min.js">
-  </script>
-  <script>
-    const slideshow = remark.create();
-  </script>
-  <style>
-      .remark-slide-content{
-          height: "100%;
-          width: "100%";
-      }
-  </style>
-  </body>
+* **Flask** app (back-end).
+* Html + css + javascript (front-end)
+	* Vivagraph.js (force-directed graph)
+	* Highcharts.js (for some exportable plots)
+
+					</textarea>
+				</section>
+			</section>
+			<section>
+					<a href="http://127.0.0.1:5000/" target="_blank">
+						<h2>Demo</h2>
+					</a>
+					(forget about iframe, it was just slowing us down... and we have
+					10mins)
+				</section>
+				<section data-markdown>
+					<textarea data-template>
+## Ackowledegements
+
+* FCT - "Fundação para a Ciência e a Tecnologia"and BacGenTrack	(TUBITAK/0004/2014)
+[FCT/ Scientific and Technological Research Council of Turkey (Türkiye Bilimsel ve Teknolojik Araşrrma Kurumu, TÜBİTAK)]
+
+* Andrew McArthur
+* Adam Phillippy
+* Catarina Inês Mendes
+* Natacha Couto
+					</textarea>
+				</section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
 </html>
-
