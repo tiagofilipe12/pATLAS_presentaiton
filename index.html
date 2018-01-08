@@ -12,6 +12,13 @@
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+		<style>
+			.alignLeft{
+				text-align: left;
+				font-size: 20pt !important;
+			}
+		</style>
+
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -83,6 +90,7 @@ background-color: white; width: 30%">
 
 					<textarea data-template>
 ## We present pATLAS
+
 * **Abricate**
 	* PladmidFinder, ResFinder and Card databases
 	* Vfdb as well in the future...
@@ -94,6 +102,18 @@ background-color: white; width: 30%">
 
 					</textarea>
 				</section>
+				<section data-markdown>
+
+					<textarea data-template>
+## We present pATLAS
+
+* Available to users in [www.patlas.site](http://www.patlas.site).
+
+* Source code at [pATLAS Github](https://github.com/tiagofilipe12/pATLAS).
+  * Please feel free to open issues
+
+					</textarea>
+				</section>
 			</section>
 			<section>
 					<a href="http://127.0.0.1:5000/" target="_blank">
@@ -102,17 +122,34 @@ background-color: white; width: 30%">
 					(forget about iframe, it was just slowing us down... and we have
 					10mins)
 				</section>
-				<section data-markdown>
+			<section data-markdown data-background-color="white">
 					<textarea data-template>
-## Ackowledegements
+						<h2>Acknowledgements</h2>
 
-* FCT - "Fundação para a Ciência e a Tecnologia"and BacGenTrack	(TUBITAK/0004/2014)
-[FCT/ Scientific and Technological Research Council of Turkey (Türkiye Bilimsel ve Teknolojik Araşrrma Kurumu, TÜBİTAK)]
+						<li class="alignLeft">FCT - "Fundação para a Ciência e a
+							Tecnologia"and
+							BacGenTrack (TUBITAK/0004/2014)</li>
 
-* Andrew McArthur
-* Adam Phillippy
-* Catarina Inês Mendes
-* Natacha Couto
+						<li class="alignLeft">Andrew McArthur</li>
+						<li class="alignLeft">Adam Phillippy</li>
+						<li class="alignLeft">Catarina Inês Mendes</li>
+						<li class="alignLeft">Natacha Couto</li>
+						<img src="images/UMMIbioinfo.jpg" style="width: 30%; position:
+						absolute; bottom: 35%; right: 1%"/>
+						<img src="images/mramirez.jpg" style="width: 10%; position:
+						absolute; bottom: 35%; right: 33%"/>
+						<img src="images/dns.png" style="width: 10%; position:
+						absolute; bottom: 54%; right: 33%"/>
+						<img src="images/ummi1.png" style="width: 18%; position:
+						relative; bottom: 2%; right: 2%"/>
+						<img src="images/The_Logo_of_Tübitak.jpg" style="width: 10%;
+						position: relative; bottom: 2%; right: 2%"/>
+						<img src="images/2015_FCT_V_color.jpg" style="width: 20%; position:
+						relative; bottom: 2%; right: 2%"/>
+						<img src="images/imm.png" style="width: 20%; position:
+						relative; bottom: 2%; right: 2%"/>
+
+
 					</textarea>
 				</section>
 
@@ -131,9 +168,9 @@ background-color: white; width: 30%">
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
 					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad() } }
 				]
-			});
+			})
 		</script>
 	</body>
 </html>
