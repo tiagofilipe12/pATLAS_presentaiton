@@ -12,13 +12,6 @@
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<style>
-			.alignLeft{
-				text-align: left;
-				font-size: 20pt !important;
-			}
-		</style>
-
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
@@ -27,47 +20,73 @@
       link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
       document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<style>
+			.alignLeft{
+				text-align: left;
+				font-size: 20pt !important;
+			}
+			.alignLeftBig{
+				text-align: left;
+				font-size: 30pt !important;
+			}
+			.customHeader{
+				color: red;
+			}
+		</style>
 	</head>
 	<body>
 	<div class="reveal">
 		<div class="slides">
-			<section data-background-image="images/capa.gif"
+			<section data-background-image="images/patlas_expansion.gif"
 							 data-background-size="contain"
 							 data-background-color="white"
 							style="color: black">
 					<!--<textarea data-template>-->
-<h2 style="color: black"> pATLAS: the hitchhikers guide to the plasmid
-	galaxy</h2>
+				<img src="images/pATLAS_black.png" style="width: 30%; border:none;
+				box-shadow: none;"/>
+				<h2 style="color: black"> pATLAS: the hitchhikers guide to the plasmid
+					galaxy</h2>
 
-Jesus TF, Ribeiro-Gonçalves B, Silva DN, Valeria B, Ramirez M, Carriço JA
+				Jesus TF, Ribeiro-Gonçalves B, Silva DN, Valeria B, Ramirez M,
+					Carriço JA
 					<!--</textarea>-->
 			</section>
 			<section>
-				<section data-markdown>
-					<textarea data-template>
-## Why
+				<section>
+					<!--<textarea data-template>-->
+						<h2 class="customHeader">Why</h2>
+						<ul style="list-style-type:disc">
+							<li class="alignLeftBig">Plasmids nature</li>
+								<ul style="list-style-type:square">
+									<li class="alignLeftBig">Mosaicism (between strains, species
+										and genera)</li>
+									<li class="alignLeftBig">Highly modular and chimeric</li>
+								</ul>
 
-* Plasmids nature
-	* Mosaicism (between strains, species and genera)
-	* Highly modular and chimeric
+							<li class="alignLeftBig">Other tools</li>
+							<ul style="list-style-type:square">
+								<li class="alignLeftBig">Assembly-based</li>
+								<ul style="list-style-type:circle">
+									<li class="alignLeftBig">cBar</li>
+									<li class="alignLeftBig">PlasmidFinder</li>
+									<li class="alignLeftBig">plasmidSPAdes</li>
+									<li class="alignLeftBig">PlasmidTron</li>
+									<li class="alignLeftBig">Recycler</li>
+								</ul>
+							</ul>
+						</ul>
 
-* Available tools and their limitations
-	* Assembly-based:
-		* cBar
-		* PlasmidFinder
-		* plasmidSPAdes
-		* Recycler
-<img src="images/plasmid1.png" style="position: absolute; bottom: 5%; right: 5%;
-background-color: white; width: 30%">
-						</textarea>
+						<img src="images/plasmid1.png" style="position: absolute; bottom: 5%; right: 5%;
+							background-color: white; width: 30%">
+						<!--</textarea>-->
 				</section>
 				<section data-markdown>
 						<textarea data-template>
-## Why
+							<h2 class="customHeader">Why</h2>
 
-* What about mapping?
-	* PlasmidProfiler
-	(based on PlasmidFinder database)
+* Other tools
+	* Mapping-based
+		* PlasmidProfiler (based on PlasmidFinder database)
 					</textarea>
 				</section>
 			</section>
@@ -75,13 +94,14 @@ background-color: white; width: 30%">
 				<section data-markdown>
 
 					<textarea data-template>
-## We present pATLAS
+						<h2 class="customHeader">We present pATLAS</h2>
 
 * NCBI refseq database - **11.371** sequences
 	* Featuring **10.663** plasmid named sequences and some oddities!
-	* Featuring weird species names (e.g Enterobacteriaceae bacterium)
+	* Featuring weird species names (e.g _Enterobacteriaceae bacterium_)
 
-* Pairwise comparisons using **MASH** to construct a network of plasmid	relationships
+* Pairwise comparisons using [MASH](https://github.com/marbl/Mash) to construct
+a network of plasmid relationships
 	* MASH distance of 0.1 ~ ANI 0.9
 	* More than **110 Million** pairwise comparisons.
 						</textarea>
@@ -89,46 +109,58 @@ background-color: white; width: 30%">
 				<section data-markdown>
 
 					<textarea data-template>
-## We present pATLAS
+						<h2 class="customHeader">We present pATLAS</h2>
 
-* **Abricate**
-	* PladmidFinder, ResFinder and Card databases
-	* Vfdb as well in the future...
+* [Abricate](https://github.com/tseemann/abricate)
+	* PlasdmidFinder, ResFinder and Card databases
+	* VFDB as well in the future...
 
-* **Flask** app (back-end).
+* [Flask](http://flask.pocoo.org/) app (back-end).
 * Html + css + javascript (front-end)
-	* Vivagraph.js (force-directed graph)
-	* Highcharts.js (for some exportable plots)
+	* [Vivagraph.js](https://github.com/anvaka/VivaGraphJS) (force-directed graph)
+	* [Highcharts.js](https://www.highcharts.com/) (for some exportable plots)
 
 					</textarea>
 				</section>
 				<section data-markdown>
 
 					<textarea data-template>
-## We present pATLAS
+						<h2 class="customHeader">We present pATLAS</h2>
+
+* Auxiliary scripts (run locally):
+	* [PlasmidCoverage](https://github.com/tiagofilipe12/PlasmidCoverage):
+		* Mapping (**bowtie2** and **samtools**)
+	* [mash_wrapper](https://github.com/tiagofilipe12/mash_wrapper):
+		* Containment in reads (**Mash screen**)
+		* Calculate distance of a sequence (**Mash dist**)
+
+* Outputs (JSON format) can be loaded into pATLAS.
+						</textarea>
+				</section>
+				<section data-markdown>
+
+					<textarea data-template>
+						<h2 class="customHeader">We present pATLAS</h2>
 
 * Available to users in [www.patlas.site](http://www.patlas.site).
 
 * Source code at [pATLAS Github](https://github.com/tiagofilipe12/pATLAS).
-  * Please feel free to open issues
+  * Please feel free to open issues and make suggestions.
 
 					</textarea>
 				</section>
 			</section>
 			<section>
-					<a href="http://127.0.0.1:5000/" target="_blank">
-						<h2>Demo</h2>
-					</a>
-					(forget about iframe, it was just slowing us down... and we have
-					10mins)
-				</section>
+				<a href="http://127.0.0.1:5000/" target="_blank">
+					<h2 style="color: #0074d7">Try it out</h2>
+				</a>
+			</section>
 			<section data-markdown data-background-color="white">
 					<textarea data-template>
 						<h2>Acknowledgements</h2>
 
 						<li class="alignLeft">FCT - "Fundação para a Ciência e a
-							Tecnologia"and
-							BacGenTrack (TUBITAK/0004/2014)</li>
+							Tecnologia" and	BacGenTrack (TUBITAK/0004/2014)</li>
 
 						<li class="alignLeft">Andrew McArthur</li>
 						<li class="alignLeft">Adam Phillippy</li>
@@ -148,8 +180,6 @@ background-color: white; width: 30%">
 						relative; bottom: 2%; right: 2%"/>
 						<img src="images/imm.png" style="width: 20%; position:
 						relative; bottom: 2%; right: 2%"/>
-
-
 					</textarea>
 				</section>
 
