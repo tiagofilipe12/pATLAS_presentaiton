@@ -53,42 +53,66 @@
 			</section>
 			<section>
 				<section>
-					<!--<textarea data-template>-->
-						<h2 style="color: #3487ff">Why</h2>
-						<ul style="list-style-type:disc">
-							<li class="alignLeftBig">Plasmids nature</li>
-								<ul style="list-style-type:square">
-									<li class="alignLeftBig">Mosaicism (between strains, species
-										and genera)</li>
-									<li class="alignLeftBig">Highly modular and chimeric</li>
-								</ul>
+					<h2 style="color: #3487ff">Plasmids</h2>
+					<ul style="list-style-type:disc">
+						<li class="alignLeftBig">Extrachromosomal linear or circular DNA
+						</li>
+						<ul style="list-style-type:square">
+							<li class="alignLeftBig">Mosaicism (between strains, species
+								and genera)</li>
+							<li class="alignLeftBig">Highly modular and chimeric</li>
+						</ul>
+					</ul>
 
-							<li class="alignLeftBig">Other tools</li>
-							<ul style="list-style-type:square">
-								<li class="alignLeftBig">Assembly-based</li>
-								<ul style="list-style-type:circle">
-									<li class="alignLeftBig">cBar</li>
-									<li class="alignLeftBig">PlasmidFinder</li>
-									<li class="alignLeftBig">plasmidSPAdes</li>
-									<li class="alignLeftBig">PlasmidTron</li>
-									<li class="alignLeftBig">Recycler</li>
-								</ul>
+					<img src="images/plasmid1.png" style="fixed: absolute; bottom:
+					2%; left: 35%; background-color: white; width: 30%">
+				</section>
+				<section>
+					<h2 style="color: #3487ff">Plasmids</h2>
+					<ul style="list-style-type:disc">
+						<li class="alignLeftBig">Mobile Elements
+						</li>
+						<li class="alignLeftBig">Key components in horizontal gene transfer
+						</li>
+						<ul style="list-style-type:square">
+							<li>They often carry genes that may benefit
+								the survival of the organism (e.g antibiotic resistance)</li>
+						</ul>
+					</ul>
+					<img src="images/Conjugation.svg.png" style="fixed: absolute; bottom:
+					2%; left: 35%; background-color: white; width: 40%">
+				</section>
+			</section>
+			<section>
+				<section>
+					<!--<textarea data-template>-->
+					<h2 style="color: #3487ff">Why</h2>
+					<ul style="list-style-type:disc">
+						<li class="alignLeftBig">Available tools (disclaimer: these
+							are <b>not</b> people's names)</li>
+						<ul style="list-style-type:square">
+							<li class="alignLeftBig">Assembly-based</li>
+							<ul style="list-style-type:circle">
+								<li class="alignLeftBig">cBar</li>
+								<li class="alignLeftBig">PlasmidFinder</li>
+								<li class="alignLeftBig">plasmidSPAdes</li>
+								<li class="alignLeftBig">PlasmidTron</li>
+								<li class="alignLeftBig">Recycler</li>
 							</ul>
 						</ul>
-
-						<img src="images/plasmid1.png" style="position: absolute; bottom: 5%; right: 5%;
-							background-color: white; width: 30%">
-						<!--</textarea>-->
+					</ul>
+					<!--</textarea>-->
 				</section>
 				<section data-markdown>
 						<textarea data-template>
 							<h2 style="color: #3487ff">Why</h2>
 
-* Other tools
+* Available tools (disclaimer: these are **not** people's names)
 	* Mapping-based
 		* PlasmidProfiler (based on PlasmidFinder database)
 					</textarea>
 				</section>
+			</section>
 			</section>
 			<section>
 				<section data-markdown>
@@ -96,8 +120,8 @@
 					<textarea data-template>
 						<h2 style="color: #3487ff">We present pATLAS</h2>
 
-* NCBI refseq database - **11.371** sequences
-	* Featuring **10.663** plasmid named sequences and some oddities!
+* NCBI refseq database - **11.667** sequences
+	* Featuring **10.949** plasmid named sequences and some oddities!
 	* Featuring weird species names (e.g _Enterobacteriaceae bacterium_)
 
 * Pairwise comparisons using [MASH](https://github.com/marbl/Mash) to construct
@@ -112,8 +136,9 @@ a network of plasmid relationships
 						<h2 style="color: #3487ff">We present pATLAS</h2>
 
 * [Abricate](https://github.com/tseemann/abricate)
-	* PlasdmidFinder, ResFinder and Card databases
-	* VFDB as well in the future...
+	* PlasdmidFinder (plasmid families)
+	* ResFinder and Card databases (resistance genes)
+	* VFDB (virulence genes)
 
 * [Flask](http://flask.pocoo.org/) app (back-end).
 * Html + css + javascript (front-end)
@@ -154,6 +179,21 @@ a network of plasmid relationships
 				<a href="http://127.0.0.1:5000/" target="_blank">
 					<h2 style="color: #0074d7">Try it out</h2>
 				</a>
+			</section>
+			<section data-markdown>
+
+					<textarea data-template>
+						<h2 style="color: #3487ff">Conclusions</h2>
+
+* User-friendly interface to browse NCBI Plasmid refseq
+	* Allows to discover annotation issues
+	* Allows to check for conflicts between CARD and ResFinder
+	* Clear separation between Gram+ and Gram-
+	* Robust clustering of Gram+ bacteria (by genera)
+* This method can be used with any sequence type (e.g. TE and ICEs)
+
+					</textarea>
+			</section>
 			</section>
 			<section data-markdown data-background-color="white">
 					<textarea data-template>
