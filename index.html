@@ -64,8 +64,7 @@
 						</ul>
 					</ul>
 
-					<img src="images/plasmid1.png" style="fixed: absolute; bottom:
-					2%; left: 35%; background-color: white; width: 30%">
+					<img src="images/plasmid1.png" style="background-color: white; width: 30%">
 				</section>
 				<section>
 					<h2 style="color: #3487ff">Plasmids</h2>
@@ -79,8 +78,7 @@
 								the survival of the organism (e.g antibiotic resistance)</li>
 						</ul>
 					</ul>
-					<img src="images/Conjugation.svg.png" style="fixed: absolute; bottom:
-					2%; left: 35%; background-color: white; width: 40%">
+					<img src="images/Conjugation.svg.png" style="background-color: white; width: 40%">
 				</section>
 			</section>
 			<section>
@@ -173,14 +171,162 @@ a network of plasmid relationships
   * Please feel free to open issues and make suggestions.
 
 					</textarea>
-				</section>
-			</section>
-			<section>
-				<a href="http://127.0.0.1:5000/" target="_blank">
-					<h2 style="color: #0074d7">Try it out</h2>
-				</a>
-			</section>
-			<section data-markdown>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h2 style="color: #0074d7">pATLAS - Browse</h2>
+
+          <ul style="list-style-type:disc">
+            <li class="alignLeftBig">Initial visualization:
+            </li>
+            <img src="images/initial_viz.gif" style="width: 100%; border:none;
+				box-shadow: none;"/>
+          </ul>
+        </section>
+
+        <section>
+          <h2 style="color: #0074d7">pATLAS - Browse</h2>
+
+          <ul style="list-style-type:disc">
+            <li class="alignLeftBig">Plasmid information:
+            </li>
+            <img src="images/plasmid_click.gif" style="width: 100%; border:none;
+				box-shadow: none;"/>
+          </ul>
+        </section>
+
+        <section>
+          <h2 style="color: #0074d7">pATLAS - Browse</h2>
+
+          <ul style="list-style-type:disc">
+            <li class="alignLeftBig">Browse by taxa:
+            </li>
+            <img src="images/taxa_search.gif" style="width: 100%; border:none;
+				box-shadow: none;"/>
+          </ul>
+        </section>
+
+        <section>
+          <h2 style="color: #0074d7">pATLAS - Browse</h2>
+
+          <ul style="list-style-type:disc">
+            <li class="alignLeftBig"><b>Other metadata:</b>
+              <ul style="list-style-type:square">
+                <li class="alignLeftBig"><b>Distance</b> - mash distance between two
+                  plasmids</li>
+                <li class="alignLeftBig"><b>Length</b> - The size in bp of the
+                  plasmids</li>
+                <li class="alignLeftBig"><b>Size ratio</b> - The difference in size
+                  between two plasmids</li>
+              </ul>
+            </li>
+          </ul>
+          <img src="images/distance_result.png" style="width: 60%; border:none;
+				box-shadow: none; "/>
+        </section>
+
+        <section>
+          <h2 style="color: #0074d7">pATLAS - Browse</h2>
+
+          <ul style="list-style-type:disc">
+            <li class="alignLeftBig">Browse by resistance genes:
+            </li>
+            <img src="images/browse_resistance.gif" style="width: 100%; border:none;
+				box-shadow: none;"/>
+          </ul>
+        </section>
+
+        <section>
+          <h2 style="color: #0074d7">pATLAS - Browse</h2>
+
+          <ul lass="alignLeftBig" style="list-style-type:disc">
+            <li class="alignLeftBig"><b>Other annotations:</b>
+              <ul style="list-style-type:square">
+                <li class="alignLeftBig"><b>Plasmid families</b> - PlasmidFinder
+                </li>
+                <li class="alignLeftBig"><b>Virulence</b> - VFDB
+                </li>
+              </ul>
+            </li>
+            <img src="images/browse_pf.png" style="position: relative;
+            left: 10%; bottom: 0%; width: 80%; border:none; box-shadow: none; "
+            />
+          </ul>
+
+        </section>
+
+      </section>
+
+      <section>
+
+        <section>
+          <h2 style="color: #0074d7">pATLAS - Import</h2>
+
+          <ul lass="alignLeftBig" style="list-style-type:disc">
+            <li class="alignLeftBig"><b>Mapping results</b>
+            </li>
+            <li class="alignLeftBig"><b>Mash screen results</b>
+            </li>
+            <li class="alignLeftBig"><b>Assembly/Mash dist screen results</b>
+            </li>
+            <img src="images/import_menu.png" style="position: relative;
+            left: 24%; bottom: 0%; width: 52%; border:none; box-shadow: none; "
+            />
+          </ul>
+
+        </section>
+
+        <section data-markdown="">
+          <textarea data-template>
+          <h2 style="color: #0074d7">pATLAS - pATLASflow</h2>
+
+* A series of pipelines:
+  * Using [NextFlow](https://www.nextflow.io/) (the easy way):
+     * Easier to provide inputs
+     * More capable to manage multiple inputs (e.g. multiple pairs of reads)
+     * No need to install third party programs manually (e.g. bowtie2)
+  * Using python scripts (the hard way)
+          </textarea>
+
+        </section>
+
+        <section>
+          <h2 style="color: #0074d7">pATLAS - Import</h2>
+
+          <ul lass="alignLeftBig" style="list-style-type:disc">
+            <li class="alignLeftBig"><b>Results example</b>
+            </li>
+            <img src="images/import_mapping.gif" style="width: 100%; border:none; box-shadow: none; "
+            />
+          </ul>
+
+        </section>
+
+      </section>
+
+      <section>
+
+        <section>
+          <h2 style="color: #0074d7">pATLAS - Statistics</h2>
+
+          <ul lass="alignLeftBig" style="list-style-type:disc">
+            <li class="alignLeftBig"><b>Taxa</b>
+            </li>
+            <li class="alignLeftBig"><b>Length</b>
+            </li>
+            <li class="alignLeftBig"><b>Annotations</b>
+            </li>
+            <img src="" style="position: relative;
+            left: 24%; bottom: 0%; width: 52%; border:none; box-shadow: none; "
+            />
+          </ul>
+
+        </section>
+
+      </section>
+
+      <section data-markdown>
 
 					<textarea data-template>
 						<h2 style="color: #3487ff">Conclusions</h2>
@@ -193,9 +339,9 @@ a network of plasmid relationships
 * This method can be used with any sequence type (e.g. TE and ICEs)
 
 					</textarea>
-			</section>
-			</section>
-			<section data-markdown data-background-color="white">
+      </section>
+      </section>
+      <section data-markdown data-background-color="white">
 					<textarea data-template>
 						<h2>Acknowledgements</h2>
 
