@@ -69,13 +69,12 @@
 				<section>
 					<h2 style="color: #3487ff">Plasmids</h2>
 					<ul style="list-style-type:disc">
-						<li class="alignLeftBig">Mobile Elements
+						<li class="alignLeftBig">They are Mobile Elements
 						</li>
-						<li class="alignLeftBig">Key components in horizontal gene transfer
+						<li class="alignLeftBig">Key components in HGT - conjugation
 						</li>
 						<ul style="list-style-type:square">
-							<li>They often carry genes that may benefit
-								the survival of the organism (e.g antibiotic resistance)</li>
+							<li>They carry important genes for organism's survival (e.g antibiotic resistance)</li>
 						</ul>
 					</ul>
 					<img src="images/Conjugation.svg.png" style="background-color: white; width: 40%">
@@ -145,21 +144,7 @@ a network of plasmid relationships
 
 					</textarea>
 				</section>
-				<section data-markdown>
 
-					<textarea data-template>
-						<h2 style="color: #3487ff">We present pATLAS</h2>
-
-* Auxiliary scripts (run locally):
-	* [PlasmidCoverage](https://github.com/tiagofilipe12/PlasmidCoverage):
-		* Mapping (**bowtie2** and **samtools**)
-	* [mash_wrapper](https://github.com/tiagofilipe12/mash_wrapper):
-		* Containment in reads (**Mash screen**)
-		* Calculate distance of a sequence (**Mash dist**)
-
-* Outputs (JSON format) can be loaded into pATLAS.
-						</textarea>
-				</section>
 				<section data-markdown>
 
 					<textarea data-template>
@@ -291,6 +276,28 @@ a network of plasmid relationships
 
         </section>
 
+				<section data-markdown>
+
+					<textarea data-template>
+						<h2 style="color: #3487ff">pATLAS - pATLASflow</h2>
+
+* [pATLASflow](https://github.com/tiagofilipe12/pATLASflow):
+	* Mapping (**bowtie2** and **samtools**)
+	* Containment in reads (**Mash screen**)
+	* Calculate distance of an assembly to all the plasmids in the database
+						(**Mash dist**)
+
+```sh
+# Example run of pATLASflow
+nextflow run tiagofilipe12/pATLASflow --mapping --reads
+						path_to_folder
+
+```
+
+* Outputs (JSON format) can be loaded into pATLAS.
+						</textarea>
+				</section>
+
         <section>
           <h2 style="color: #0074d7">pATLAS - Import</h2>
 
@@ -321,10 +328,38 @@ a network of plasmid relationships
 						box-shadow: none"/>
 					</ul>
 
-
-
-
         </section>
+
+				<section>
+					<h2 style="color: #0074d7">pATLAS - Table</h2>
+
+					<ul class="alignLeftBig" style="list-style-type:disc">
+						<li class="alignLeftBig"><b>Browsing</b>
+						</li>
+						<li class="alignLeftBig"><b>Export (csv, spreadsheet, txt and more)</b>
+						</li>
+						<li class="alignLeftBig"><b>Download sequences</b>
+						</li>
+						<img src="images/Table_example.png" style="border:none;
+						box-shadow: none"/>
+					</ul>
+
+				</section>
+
+				<section>
+					<h2 style="color: #0074d7">pATLAS - Heatmap</h2>
+
+					<ul class="alignLeftBig" style="list-style-type:disc">
+						<li class="alignLeftBig"><b>Compare multiple samples</b>
+						</li>
+
+
+					</ul>
+
+					<img src="images/heatmap.png" style="width: 70%; border:none;
+						box-shadow: none"/>
+
+				</section>
 
       </section>
 
@@ -334,11 +369,8 @@ a network of plasmid relationships
 						<h2 style="color: #3487ff">Conclusions</h2>
 
 * User-friendly interface to browse NCBI refseq plasmid database
-	* Allows to discover annotation issues
-	* Allows to check for conflicts between CARD and ResFinder
-	* Clear separation between Gram+ and Gram-
-	* Robust clustering of Gram+ bacteria (by genera)
-* This method can be used with any sequence type (e.g. TE and ICEs)
+* This method can be used with any sequence type (e.g. TE and ICEs).
+* Allow to quickly visualize plasmids contained in HTS libraries.
 
 					</textarea>
       </section>
