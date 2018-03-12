@@ -64,23 +64,20 @@
 						</ul>
 					</ul>
 
-					<img src="images/plasmid1.png" style="fixed: absolute; bottom:
-					2%; left: 35%; background-color: white; width: 30%">
+					<img src="images/plasmid1.png" style="background-color: white; width: 30%">
 				</section>
 				<section>
 					<h2 style="color: #3487ff">Plasmids</h2>
 					<ul style="list-style-type:disc">
-						<li class="alignLeftBig">Mobile Elements
+						<li class="alignLeftBig">They are Mobile Elements
 						</li>
-						<li class="alignLeftBig">Key components in horizontal gene transfer
+						<li class="alignLeftBig">Key components in HGT - conjugation
 						</li>
 						<ul style="list-style-type:square">
-							<li>They often carry genes that may benefit
-								the survival of the organism (e.g antibiotic resistance)</li>
+							<li>They carry important genes for organism's survival (e.g antibiotic resistance)</li>
 						</ul>
 					</ul>
-					<img src="images/Conjugation.svg.png" style="fixed: absolute; bottom:
-					2%; left: 35%; background-color: white; width: 40%">
+					<img src="images/Conjugation.svg.png" style="background-color: white; width: 40%">
 				</section>
 			</section>
 			<section>
@@ -147,21 +144,7 @@ a network of plasmid relationships
 
 					</textarea>
 				</section>
-				<section data-markdown>
 
-					<textarea data-template>
-						<h2 style="color: #3487ff">We present pATLAS</h2>
-
-* Auxiliary scripts (run locally):
-	* [PlasmidCoverage](https://github.com/tiagofilipe12/PlasmidCoverage):
-		* Mapping (**bowtie2** and **samtools**)
-	* [mash_wrapper](https://github.com/tiagofilipe12/mash_wrapper):
-		* Containment in reads (**Mash screen**)
-		* Calculate distance of a sequence (**Mash dist**)
-
-* Outputs (JSON format) can be loaded into pATLAS.
-						</textarea>
-				</section>
 				<section data-markdown>
 
 					<textarea data-template>
@@ -173,29 +156,226 @@ a network of plasmid relationships
   * Please feel free to open issues and make suggestions.
 
 					</textarea>
+        </section>
+      </section>
+      <section>
+        <section>
+          <h2 style="color: #0074d7">pATLAS - Browse</h2>
+
+          <ul style="list-style-type:disc">
+            <li class="alignLeftBig">Initial visualization:
+            </li>
+            <img src="images/initial_viz.gif" style="width: 100%; border:none;
+				box-shadow: none;"/>
+          </ul>
+        </section>
+
+        <section>
+          <h2 style="color: #0074d7">pATLAS - Browse</h2>
+
+          <ul style="list-style-type:disc">
+            <li class="alignLeftBig">Plasmid information:
+            </li>
+            <img src="images/plasmid_click.gif" style="width: 100%; border:none;
+				box-shadow: none;"/>
+          </ul>
+        </section>
+
+        <section>
+          <h2 style="color: #0074d7">pATLAS - Browse</h2>
+
+          <ul style="list-style-type:disc">
+            <li class="alignLeftBig">Browse by taxa:
+            </li>
+            <img src="images/taxa_search.gif" style="width: 100%; border:none;
+				box-shadow: none;"/>
+          </ul>
+        </section>
+
+        <section>
+          <h2 style="color: #0074d7">pATLAS - Browse</h2>
+
+          <ul style="list-style-type:disc">
+            <li class="alignLeftBig"><b>Other metadata:</b>
+              <ul style="list-style-type:square">
+                <li class="alignLeftBig"><b>Distance</b> - mash distance between two
+                  plasmids</li>
+                <li class="alignLeftBig"><b>Length</b> - The size in bp of the
+                  plasmids</li>
+                <li class="alignLeftBig"><b>Size ratio</b> - The difference in size
+                  between two plasmids</li>
+              </ul>
+            </li>
+          </ul>
+          <img src="images/distance_result.png" style="width: 60%; border:none;
+				box-shadow: none; "/>
+        </section>
+
+        <section>
+          <h2 style="color: #0074d7">pATLAS - Browse</h2>
+
+          <ul style="list-style-type:disc">
+            <li class="alignLeftBig">Browse by resistance genes:
+            </li>
+            <img src="images/browse_resistance.gif" style="width: 100%; border:none;
+				box-shadow: none;"/>
+          </ul>
+        </section>
+
+        <section>
+          <h2 style="color: #0074d7">pATLAS - Browse</h2>
+
+          <ul lass="alignLeftBig" style="list-style-type:disc">
+            <li class="alignLeftBig"><b>Other annotations:</b>
+              <ul style="list-style-type:square">
+                <li class="alignLeftBig"><b>Plasmid families</b> - PlasmidFinder
+                </li>
+                <li class="alignLeftBig"><b>Virulence</b> - VFDB
+                </li>
+              </ul>
+            </li>
+            <img src="images/browse_pf.png" style="position: relative;
+            left: 10%; bottom: 0%; width: 80%; border:none; box-shadow: none; "
+            />
+          </ul>
+
+        </section>
+
+      </section>
+
+      <section>
+
+        <section>
+          <h2 style="color: #0074d7">pATLAS - Import</h2>
+
+          <ul lass="alignLeftBig" style="list-style-type:disc">
+            <li class="alignLeftBig"><b>Mapping results</b>
+            </li>
+            <li class="alignLeftBig"><b>Mash screen results</b>
+            </li>
+            <li class="alignLeftBig"><b>Assembly/Mash dist screen results</b>
+            </li>
+            <img src="images/import_menu.png" style="position: relative;
+            left: 24%; bottom: 0%; width: 52%; border:none; box-shadow: none; "
+            />
+          </ul>
+
+        </section>
+
+        <section data-markdown>
+          <textarea data-template>
+          <h2 style="color: #0074d7">pATLAS - pATLASflow</h2>
+
+* A series of pipelines:
+  * Using [NextFlow](https://www.nextflow.io/) (the easy way):
+     * Easier to provide inputs
+     * More capable to manage multiple inputs (e.g. multiple pairs of reads)
+     * No need to install third party programs manually (e.g. bowtie2)
+  * Using python scripts (the hard way)
+          </textarea>
+
+        </section>
+
+				<section data-markdown>
+
+					<textarea data-template>
+						<h2 style="color: #3487ff">pATLAS - pATLASflow</h2>
+
+* [pATLASflow](https://github.com/tiagofilipe12/pATLASflow):
+	* Mapping (**bowtie2** and **samtools**)
+	* Containment in reads (**Mash screen**)
+	* Calculate distance of an assembly to all the plasmids in the database
+						(**Mash dist**)
+
+```sh
+# Example run of pATLASflow
+nextflow run tiagofilipe12/pATLASflow --mapping --reads
+						path_to_folder
+
+```
+
+* Outputs (JSON format) can be loaded into pATLAS.
+						</textarea>
 				</section>
-			</section>
-			<section>
-				<a href="http://127.0.0.1:5000/" target="_blank">
-					<h2 style="color: #0074d7">Try it out</h2>
-				</a>
-			</section>
-			<section data-markdown>
+
+        <section>
+          <h2 style="color: #0074d7">pATLAS - Import</h2>
+
+          <ul lass="alignLeftBig" style="list-style-type:disc">
+            <li class="alignLeftBig"><b>Results example</b>
+            </li>
+            <img src="images/import_mapping.gif" style="width: 100%; border:none; box-shadow: none; "
+            />
+          </ul>
+
+        </section>
+
+      </section>
+
+      <section>
+
+        <section>
+					<h2 style="color: #0074d7">pATLAS - Statistics</h2>
+
+					<ul class="alignLeftBig" style="list-style-type:disc">
+						<li class="alignLeftBig"><b>Taxa</b>
+						</li>
+						<li class="alignLeftBig"><b>Length</b>
+						</li>
+						<li class="alignLeftBig"><b>Annotations</b>
+						</li>
+						<img src="images/plots.gif" style="border:none;
+						box-shadow: none"/>
+					</ul>
+
+        </section>
+
+				<section>
+					<h2 style="color: #0074d7">pATLAS - Table</h2>
+
+					<ul class="alignLeftBig" style="list-style-type:disc">
+						<li class="alignLeftBig"><b>Browsing</b>
+						</li>
+						<li class="alignLeftBig"><b>Export (csv, spreadsheet, txt and more)</b>
+						</li>
+						<li class="alignLeftBig"><b>Download sequences</b>
+						</li>
+						<img src="images/Table_example.png" style="border:none;
+						box-shadow: none"/>
+					</ul>
+
+				</section>
+
+				<section>
+					<h2 style="color: #0074d7">pATLAS - Heatmap</h2>
+
+					<ul class="alignLeftBig" style="list-style-type:disc">
+						<li class="alignLeftBig"><b>Compare multiple samples</b>
+						</li>
+
+
+					</ul>
+
+					<img src="images/heatmap.png" style="width: 70%; border:none;
+						box-shadow: none"/>
+
+				</section>
+
+      </section>
+
+      <section data-markdown>
 
 					<textarea data-template>
 						<h2 style="color: #3487ff">Conclusions</h2>
 
-* User-friendly interface to browse NCBI Plasmid refseq
-	* Allows to discover annotation issues
-	* Allows to check for conflicts between CARD and ResFinder
-	* Clear separation between Gram+ and Gram-
-	* Robust clustering of Gram+ bacteria (by genera)
-* This method can be used with any sequence type (e.g. TE and ICEs)
+* User-friendly interface to browse NCBI refseq plasmid database
+* This method can be used with any sequence type (e.g. TE and ICEs).
+* Allow to quickly visualize plasmids contained in HTS libraries.
 
 					</textarea>
-			</section>
-			</section>
-			<section data-markdown data-background-color="white">
+      </section>
+      </section>
+      <section data-markdown data-background-color="white">
 					<textarea data-template>
 						<h2>Acknowledgements</h2>
 
